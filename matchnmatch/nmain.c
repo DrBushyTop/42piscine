@@ -11,194 +11,194 @@
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include"ex00/match.c"
-//#include"ex01/nmatch.c"
+//#include"ex00/match.c"
+#include"ex01/nmatch.c"
 
 int	main(void)
 {
 
-	printf("%s", nmatch("asdf", "asdf"), 1);
-	printf("%s", nmatch("", ""), 1);
-	printf("%s", nmatch("a", "a"), 1);
-	printf("%s", nmatch("aa", "aa"), 1);
-	printf("%s", nmatch("aaa", "aaa"), 1);
+	printf("%d", nmatch("asdf", "asdf"));
+	printf("%d", nmatch("", ""));
+	printf("%d", nmatch("a", "a"));
+	printf("%d", nmatch("aa", "aa"));
+	printf("%d", nmatch("aaa", "aaa"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("", "asdf"), 0);
-	printf("%s", nmatch("asdf", ""), 0);
-	printf("%s", nmatch("asdf", "a"), 0);
-	printf("%s", nmatch("a", "asdf"), 0);
-	printf("%s", nmatch("asdf", "asde"), 0);
+	printf("%d", nmatch("", "asdf"));
+	printf("%d", nmatch("asdf", ""));
+	printf("%d", nmatch("asdf", "a"));
+	printf("%d", nmatch("a", "asdf"));
+	printf("%d", nmatch("asdf", "asde"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("asde", "asdf"), 0);
-	printf("%s", nmatch("asdf", "asdff"), 0);
-	printf("%s", nmatch("asdff", "asdf"), 0);
-	printf("%s", nmatch("aasdf", "asdf"), 0);
-	printf("%s", nmatch("asdf", "aasdf"), 0);
+	printf("%d", nmatch("asde", "asdf"));
+	printf("%d", nmatch("asdf", "asdff"));
+	printf("%d", nmatch("asdff", "asdf"));
+	printf("%d", nmatch("aasdf", "asdf"));
+	printf("%d", nmatch("asdf", "aasdf"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("", "*"), 1);
-	printf("%s", nmatch("a", "*"), 1);
-	printf("%s", nmatch("aa", "*"), 1);
-	printf("%s", nmatch("asdf", "*"), 1);
-	printf("%s", nmatch("asdfasdf", "*"), 1);
+	printf("%d", nmatch("", "*"));
+	printf("%d", nmatch("a", "*"));
+	printf("%d", nmatch("aa", "*"));
+	printf("%d", nmatch("asdf", "*"));
+	printf("%d", nmatch("asdfasdf", "*"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("asdf", "a*"), 1);
-	printf("%s", nmatch("asdfasdf", "a*"), 1);
-	printf("%s", nmatch("a", "a*"), 1);
-	printf("%s", nmatch("aa", "a*"), 1);
-	printf("%s", nmatch("aasdf", "a*"), 1);
+	printf("%d", nmatch("asdf", "a*"));
+	printf("%d", nmatch("asdfasdf", "a*"));
+	printf("%d", nmatch("a", "a*"));
+	printf("%d", nmatch("aa", "a*"));
+	printf("%d", nmatch("aasdf", "a*"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("", "a*"), 0);
-	printf("%s", nmatch("f", "a*"), 0);
-	printf("%s", nmatch("fdsa", "a*"), 0);
-	printf("%s", nmatch("faaaa", "a*"), 0);
-	printf("%s", nmatch("faaasdf", "a*"), 0);
+	printf("%d", nmatch("", "a*"));
+	printf("%d", nmatch("f", "a*"));
+	printf("%d", nmatch("fdsa", "a*"));
+	printf("%d", nmatch("faaaa", "a*"));
+	printf("%d", nmatch("faaasdf", "a*"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("fdsa", "*a"), 1);
-	printf("%s", nmatch("a", "*a"), 1);
-	printf("%s", nmatch("aa", "*a"), 1);
-	printf("%s", nmatch("fdsaaaaaaafdsa", "*a"), 1);
-	printf("%s", nmatch("dfsaaaaaaaaaaaa", "*a"), 1);
+	printf("%d", nmatch("fdsa", "*a"));
+	printf("%d", nmatch("a", "*a"));
+	printf("%d", nmatch("aa", "*a"));
+	printf("%d", nmatch("fdsaaaaaaafdsa", "*a"));
+	printf("%d", nmatch("dfsaaaaaaaaaaaa", "*a"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("", "*a"), 0);
-	printf("%s", nmatch("f", "*a"), 0);
-	printf("%s", nmatch("asdf", "*a"), 0);
-	printf("%s", nmatch("aaaaaf", "*a"), 0);
-	printf("%s", nmatch("fdsaaaaf", "*a"), 0);
+	printf("%d", nmatch("", "*a"));
+	printf("%d", nmatch("f", "*a"));
+	printf("%d", nmatch("asdf", "*a"));
+	printf("%d", nmatch("aaaaaf", "*a"));
+	printf("%d", nmatch("fdsaaaaf", "*a"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("abc", "abc*"), 1);
-	printf("%s", nmatch("abcdef", "abc*"), 1);
-	printf("%s", nmatch("abccccccc", "abc*"), 1);
-	printf("%s", nmatch("abcabc", "abc*"), 1);
-	printf("%s", nmatch("abcdabcdabc", "abc*"), 1);
+	printf("%d", nmatch("abc", "abc*"));
+	printf("%d", nmatch("abcdef", "abc*"));
+	printf("%d", nmatch("abccccccc", "abc*"));
+	printf("%d", nmatch("abcabc", "abc*"));
+	printf("%d", nmatch("abcdabcdabc", "abc*"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("", "abc*"), 0);
-	printf("%s", nmatch("f", "abc*"), 0);
-	printf("%s", nmatch("abbc", "abc*"), 0);
-	printf("%s", nmatch("ab", "abc*"), 0);
-	printf("%s", nmatch("abb", "abc*"), 0);
+	printf("%d", nmatch("", "abc*"));
+	printf("%d", nmatch("f", "abc*"));
+	printf("%d", nmatch("abbc", "abc*"));
+	printf("%d", nmatch("ab", "abc*"));
+	printf("%d", nmatch("abb", "abc*"));
 	printf("\n00000 <- expected\n\n");
 // 50
 
-	printf("%s", nmatch("abc", "*abc"), 1);
-	printf("%s", nmatch("defabc", "*abc"), 1);
-	printf("%s", nmatch("aaaaaaabc", "*abc"), 1);
-	printf("%s", nmatch("abcabc", "*abc"), 1);
-	printf("%s", nmatch("abcdabcdabc", "*abc"), 1);
+	printf("%d", nmatch("abc", "*abc"));
+	printf("%d", nmatch("defabc", "*abc"));
+	printf("%d", nmatch("aaaaaaabc", "*abc"));
+	printf("%d", nmatch("abcabc", "*abc"));
+	printf("%d", nmatch("abcdabcdabc", "*abc"));
 	printf("\n11111 <- expected\n\n");
 
-	printf("%s", nmatch("", "*abc"), 0);
-	printf("%s", nmatch("f", "*abc"), 0);
-	printf("%s", nmatch("abbc", "*abc"), 0);
-	printf("%s", nmatch("ab", "*abc"), 0);
-	printf("%s", nmatch("abb", "*abc"), 0);
+	printf("%d", nmatch("", "*abc"));
+	printf("%d", nmatch("f", "*abc"));
+	printf("%d", nmatch("abbc", "*abc"));
+	printf("%d", nmatch("ab", "*abc"));
+	printf("%d", nmatch("abb", "*abc"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("a", "*a*"), 1);
-	printf("%s", nmatch("aaa", "*a*"), 3);
-	printf("%s", nmatch("aaabc", "*a*"), 3);
-	printf("%s", nmatch("bcabc", "*a*"), 1);
-	printf("%s", nmatch("sdfa", "*a*"), 1);
+	printf("%d", nmatch("a", "*a*"));
+	printf("%d", nmatch("aaa", "*a*"));
+	printf("%d", nmatch("aaabc", "*a*"));
+	printf("%d", nmatch("bcabc", "*a*"));
+	printf("%d", nmatch("sdfa", "*a*"));
 	printf("\n13311 <- expected\n\n");
 
-	printf("%s", nmatch("", "*a*"), 0);
-	printf("%s", nmatch("f", "*a*"), 0);
-	printf("%s", nmatch("bcd", "*a*"), 0);
-	printf("%s", nmatch("bb", "*a*"), 0);
-	printf("%s", nmatch("ASDF", "*a*"), 0);
+	printf("%d", nmatch("", "*a*"));
+	printf("%d", nmatch("f", "*a*"));
+	printf("%d", nmatch("bcd", "*a*"));
+	printf("%d", nmatch("bb", "*a*"));
+	printf("%d", nmatch("ASDF", "*a*"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("ab", "*ab*"), 1);
-	printf("%s", nmatch("abcd", "*ab*"), 1);
-	printf("%s", nmatch("efabcd", "*ab*"), 1);
-	printf("%s", nmatch("ababab", "*ab*"), 3);
-	printf("%s", nmatch("bab", "*ab*"), 1);
+	printf("%d", nmatch("ab", "*ab*"));
+	printf("%d", nmatch("abcd", "*ab*"));
+	printf("%d", nmatch("efabcd", "*ab*"));
+	printf("%d", nmatch("ababab", "*ab*"));
+	printf("%d", nmatch("bab", "*ab*"));
 	printf("\n11131 <- expected\n\n");
 
-	printf("%s", nmatch("asdf", "*ab*"), 0);
-	printf("%s", nmatch("ba", "*ab*"), 0);
-	printf("%s", nmatch("", "*ab*"), 0);
-	printf("%s", nmatch("f", "*ab*"), 0);
-	printf("%s", nmatch("bbbbbbaaaaa", "*ab*"), 0);
+	printf("%d", nmatch("asdf", "*ab*"));
+	printf("%d", nmatch("ba", "*ab*"));
+	printf("%d", nmatch("", "*ab*"));
+	printf("%d", nmatch("f", "*ab*"));
+	printf("%d", nmatch("bbbbbbaaaaa", "*ab*"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("", "**"), 1);
-	printf("%s", nmatch("a", "**"), 2);
-	printf("%s", nmatch("ab", "**"), 3);
-	printf("%s", nmatch("abc", "**"), 4);
-	printf("%s", nmatch("abcd", "**"), 5);
+	printf("%d", nmatch("", "**"));
+	printf("%d", nmatch("a", "**"));
+	printf("%d", nmatch("ab", "**"));
+	printf("%d", nmatch("abc", "**"));
+	printf("%d", nmatch("abcd", "**"));
 	printf("\n12345 <- expected\n\n");
 
-	printf("%s", nmatch("a", "a**"), 1);
-	printf("%s", nmatch("ab", "a**"), 2);
-	printf("%s", nmatch("abc", "a**"), 3);
-	printf("%s", nmatch("aaaa", "a**"), 4);
-	printf("%s", nmatch("asdfa", "a**"), 5);
+	printf("%d", nmatch("a", "a**"));
+	printf("%d", nmatch("ab", "a**"));
+	printf("%d", nmatch("abc", "a**"));
+	printf("%d", nmatch("aaaa", "a**"));
+	printf("%d", nmatch("asdfa", "a**"));
 	printf("\n12345 <- expected\n\n");
 
-	printf("%s", nmatch("", "a**"), 0);
-	printf("%s", nmatch("f", "a**"), 0);
-	printf("%s", nmatch("fa", "a**"), 0);
-	printf("%s", nmatch("faaaaaaa", "a**"), 0);
-	printf("%s", nmatch("fafdsafdsa", "a**"), 0);
+	printf("%d", nmatch("", "a**"));
+	printf("%d", nmatch("f", "a**"));
+	printf("%d", nmatch("fa", "a**"));
+	printf("%d", nmatch("faaaaaaa", "a**"));
+	printf("%d", nmatch("fafdsafdsa", "a**"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("asdf", "*a**"), 4);
-	printf("%s", nmatch("sdfa", "*a**"), 1);
-	printf("%s", nmatch("faffff", "*a**"), 5);
-	printf("%s", nmatch("fdsaasdf", "*a**"), 9);
-	printf("%s", nmatch("aaaaaaa", "*a**"), 28);
+	printf("%d", nmatch("asdf", "*a**"));
+	printf("%d", nmatch("sdfa", "*a**"));
+	printf("%d", nmatch("faffff", "*a**"));
+	printf("%d", nmatch("fdsaasdf", "*a**"));
+	printf("%d", nmatch("aaaaaaa", "*a**"));
 	printf("\n415928 <- expected\n\n");
 // 100
 
-	printf("%s", nmatch("", "*a**"), 0);
-	printf("%s", nmatch("qwerqwer", "*a**"), 0);
-	printf("%s", nmatch("bbbbbb", "*a**"), 0);
-	printf("%s", nmatch("c", "*a**"), 0);
-	printf("%s", nmatch("AAAAAAAAAA", "*a**"), 0);
+	printf("%d", nmatch("", "*a**"));
+	printf("%d", nmatch("qwerqwer", "*a**"));
+	printf("%d", nmatch("bbbbbb", "*a**"));
+	printf("%d", nmatch("c", "*a**"));
+	printf("%d", nmatch("AAAAAAAAAA", "*a**"));
 	printf("\n00000 <- expected\n\n");
 
-	printf("%s", nmatch("main.c", "*.c"), 1);
-	printf("%s", nmatch("main.c.c", "*.c"), 1);
-	printf("%s", nmatch("main.h", "*.c"), 0);
-	printf("%s", nmatch("main.cc", "*.c"), 0);
-	printf("%s", nmatch("main.c", "*.*"), 1);
+	printf("%d", nmatch("main.c", "*.c"));
+	printf("%d", nmatch("main.c.c", "*.c"));
+	printf("%d", nmatch("main.h", "*.c"));
+	printf("%d", nmatch("main.cc", "*.c"));
+	printf("%d", nmatch("main.c", "*.*"));
 	printf("\n11001 <- expected\n\n");
 
-	printf("%s", nmatch("test.main.c", "test.*.c"), 1);
-	printf("%s", nmatch("test..c", "test.*.c"), 1);
-	printf("%s", nmatch("test.main.h", "test.*.c"), 0);
-	printf("%s", nmatch("main.c", "test.*.c"), 0);
-	printf("%s", nmatch("test.c", "test.*.c"), 0);
+	printf("%d", nmatch("test.main.c", "test.*.c"));
+	printf("%d", nmatch("test..c", "test.*.c"));
+	printf("%d", nmatch("test.main.h", "test.*.c"));
+	printf("%d", nmatch("main.c", "test.*.c"));
+	printf("%d", nmatch("test.c", "test.*.c"));
 	printf("\n11000 <- expected\n\n");
 
-	printf("%s", nmatch("abcde", "a*c*e"), 1);
-	printf("%s", nmatch("abcde", "*b*d*"), 1);
-	printf("%s", nmatch("abcde", "a*e*c"), 0);
-	printf("%s", nmatch("abcde", "*d*c*"), 0);
-	printf("%s", nmatch("abcde", "a*d*d"), 0);
+	printf("%d", nmatch("abcde", "a*c*e"));
+	printf("%d", nmatch("abcde", "*b*d*"));
+	printf("%d", nmatch("abcde", "a*e*c"));
+	printf("%d", nmatch("abcde", "*d*c*"));
+	printf("%d", nmatch("abcde", "a*d*d"));
 	printf("\n11000 <- expected\n\n");
 
-	printf("%s", nmatch("abcbd", "*b*"), 2);
-	printf("%s", nmatch("abc", "a**"), 3);
-	printf("%s", nmatch("test.asdf.c.bak", "*.*.*"), 3);
-	printf("%s", nmatch("test.bak", "*.*.*"), 0);
-	printf("%s", nmatch("", "************************"), 1);
+	printf("%d", nmatch("abcbd", "*b*"));
+	printf("%d", nmatch("abc", "a**"));
+	printf("%d", nmatch("test.asdf.c.bak", "*.*.*"));
+	printf("%d", nmatch("test.bak", "*.*.*"));
+	printf("%d", nmatch("", "************************"));
 	printf("\n23301 <- expected\n\n");
 
-	printf("%s", nmatch("*a", "*"), 1);
-	printf("%s", nmatch("**", "*"), 1);
-	printf("%s", nmatch("*ab", "*b"), 1);
-	printf("%s", nmatch("a*a", "a*"), 1);
-	printf("%s", nmatch("**a", "*a"), 1);
+	printf("%d", nmatch("*a", "*"));
+	printf("%d", nmatch("**", "*"));
+	printf("%d", nmatch("*ab", "*b"));
+	printf("%d", nmatch("a*a", "a*"));
+	printf("%d", nmatch("**a", "*a"));
 	printf("\n11111 <- expected\n\n");
 
 }
